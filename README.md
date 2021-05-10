@@ -25,36 +25,34 @@ Full video demonstration (youtube):
 > Mouse
 * Control the mouse through the gesture detected bellow. To move the mouse, just move your 5-fingers hand and your movement will be mapped proportionally to your screen. To lock mouse for a fell seconds, just keep your hand still for a little bit and you receive a message "Position Locked".
 
-
-<img src="https://github.com/luizhss/gesture_hand_controller/blob/main/gifs/mouse_1.gif" width="432" height="192"/>            <img src="https://github.com/luizhss/gesture_hand_controller/blob/main/gifs/mouse_2.gif" width="432" height="192"/>
+<img src="https://github.com/luizhss/Gesture_Hand_Controller/blob/master/gifs/mouse_1.gif" width="432" height="192"/>            <img src="https://github.com/luizhss/Gesture_Hand_Controller/blob/master/gifs/mouse_2.gif" width="432" height="192"/>
 
 > Left Click
 * Left Click of the mouse through the detected gesture bellow:
 
-![Left Click Gif](https://github.com/luizhss/gesture_hand_controller/blob/main/gifs/left_click.gif)
-
+![Left Click Gif](https://github.com/luizhss/Gesture_Hand_Controller/blob/master/gifs/left_click.gif)
 
 > Right Click
 * Right Click of the mouse through the detected gesture bellow:
 
-![Right Click Gif](https://github.com/luizhss/gesture_hand_controller/blob/main/gifs/right_click.gif)
+![Right Click Gif](https://github.com/luizhss/Gesture_Hand_Controller/blob/master/gifs/right_click.gif)
 
 > Scroll Up
 * For this one, just keep the detected gesture bellow for a second. 
 * Observation: in Ubuntu we suggest the value + 3 to scroll; in windows this suggested value is + 70. If you are on Windows, must to change this value in code.
 
-![Scroll Up Gif](https://github.com/luizhss/gesture_hand_controller/blob/main/gifs/scroll_up.gif)
+![Scroll Up Gif](https://github.com/luizhss/Gesture_Hand_Controller/blob/master/gifs/scroll_up.gif)
 
 > Scroll Down
 * For this one, just keep the detected gesture bellow for a second.
 * Observation: in Ubuntu we suggest the value - 3 to scroll; in windows this suggested value is - 70. If you are on Windows, must to change this value in code.
 
-![Scroll Down Gif](https://github.com/luizhss/gesture_hand_controller/blob/main/gifs/scroll_down.gif)
+![Scroll Down Gif](https://github.com/luizhss/Gesture_Hand_Controller/blob/master/gifs/scroll_down.gif)
 
 > Zoom
 * For this one, first you must keep your hand with the gesture bellow for a little bit. Then perform the "gripper movement". To zoom in, you must spread your fingers (index finger e thumb). To zoom out, you must bring your fingers (index finger and thumb) closer.
 
-![Zoom Gif](https://github.com/luizhss/gesture_hand_controller/blob/main/gifs/zoom.gif)
+![Zoom Gif](https://github.com/luizhss/Gesture_Hand_Controller/blob/master/gifs/zoom.gif)
 
 ## Pretrained models
 
