@@ -1,0 +1,5 @@
+scikit-learn==0.22.2.post1
+PyAutoGUI==0.9.52
+mediapipe==0.8.3
+numpy==1.19.3
+opencv-python==4.5.1.48
