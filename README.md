@@ -11,7 +11,7 @@ Our project is a navigation controller based on hand gestures. Using your webcam
 ## How it works
 We used Mediapipe Hand Solutions to get the hand landmarks predictions. Later, we generated a dataset with 1894 samples of different hand gestures and used it to train a SVC model. Putting it together with OpenCV, we read each frame from the camera, predict a possible gesture and invoke a routine to treat it. Each routine reproduce the determined action alongside the PyAutoGUI libray.
 
-Full video demonstration:
+Full video demonstration (youtube):
 
 [Video](https://youtu.be/OKRuiNP62Qc)
 
