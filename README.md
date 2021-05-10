@@ -18,7 +18,7 @@ Full video demonstration (youtube):
 
 ## Quick start - Install (Clone this repository)
     
-    git clone https://github.com/luizhss/gesture_hand_controller
+    git clone https://github.com/luizhss/Gesture_Hand_Controller
     
 ## Functions
 
