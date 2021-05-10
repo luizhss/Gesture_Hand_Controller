@@ -4,7 +4,7 @@
 * Matheus Vyctor Aranda Espíndola - https://github.com/Matheus-Vyctor/ - https://www.linkedin.com/in/matheus-vyctor/
 
 # Gesture_Hand_Controller
-Our project is a navigation controller based on hand gestures. Using your webcam to capture your hand, you can move your mouse, left and right click, scroll and zoom. In general, it has a good response, however it may bug sometimes. Know that this is an alpha version.
+Our project is a navigation controller based on hand gestures working on CPU. Using your webcam to capture your hand, you can move your mouse, left and right click, scroll and zoom. In general, it has a good response, however it may bug sometimes. Know that this is an alpha version.
 
 **Note: This project was tested on Ubuntu 18.04 LTS. It also works on Windows but may not work as expected in the future.**
 
@@ -15,6 +15,10 @@ Full video demonstration (youtube):
 
 [Video](https://youtu.be/OKRuiNP62Qc)
 
+To test the hand controller, just execute
+```
+python gesture_controller.py
+```
 
 ## Quick start - Install (Clone this repository)
     
