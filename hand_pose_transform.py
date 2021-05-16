@@ -33,9 +33,7 @@ class HandPoseTransform(BaseEstimator, TransformerMixin):
             norm = np.max(
                 np.sqrt(np.square(row[0::3]) + np.square(row[1::3]) + np.square(row[2::3]))
             )
-            row[0::3] = row[0::3] / norm
-            row[1::3] = row[1::3] / norm
-            row[2::3] = row[2::3] / norm
+            row = row / norm
             return row
 
         return np.apply_along_axis(_shift_and_scale, 1, X_)
