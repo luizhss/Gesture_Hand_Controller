@@ -1,15 +1,15 @@
 import numpy as np
 from collections import Counter
 
-CLASSES = ['left_click', 'mouse', 'right_click',
-           'scroll_down', 'scroll_up', 'zoom']
-
 
 class Delay():
     """
     Delay Frames Class.
 
     This class is responsible to provoke delays on the execution frames.
+    Required Arguments:
+        classes {list[string], required}: List of class names from the trained classifier.
+
     Keyword Arguments:
         moving_average {float, optional}: minimum percentage of pose prediction
                         in the last (frames_in_action or frames_out) frames to
@@ -24,11 +24,12 @@ class Delay():
 
     """
 
-    def __init__(self, moving_average=.8, frames_in_action=20, frames_out=45):
+    def __init__(self, classes, moving_average=.8, frames_in_action=20, frames_out=45):
         self.in_action = False
         self.counter_class = np.empty((0))
+        self.classes = list(classes)
         self.counter_confidences = np.empty(
-            (0, len(CLASSES)), dtype=np.float64)
+            (0, len(classes)), dtype=np.float64)
         self.moving_average = moving_average
         self.frames_in_action = frames_in_action
         self.frames_out = frames_out
@@ -42,7 +43,7 @@ class Delay():
         self.in_action = False
         self.counter_class = np.empty((0))
         self.counter_confidences = np.empty(
-            (0, len(CLASSES)), dtype=np.float64)
+            (0, len(self.classes)), dtype=np.float64)
 
         if ignore_next_frames > 0:
             self.ignore_frames = ignore_next_frames
@@ -62,7 +63,7 @@ class Delay():
             if most_common_class == 'Unknown':
                 return ('Unknown', 1.0)
 
-            idx_cls = CLASSES.index(most_common_class)
+            idx_cls = self.classes.index(most_common_class)
             avg_confidence = self.counter_confidences.mean(axis=0)[idx_cls]
 
             return (most_common_class, avg_confidence)
@@ -81,11 +82,13 @@ class Delay():
             self.counter_class = self.counter_class[-self.frames_in_action:]
             self.counter_confidences = self.counter_confidences[-self.frames_in_action:, :]
 
-    def update(self, cls, conf=np.zeros((1, len(CLASSES)), dtype=np.float64)):
+    def update(self, cls, conf=None):
         """
         Based on the last frames, compute the most possible prediction and
         its confidence
         """
+        if conf is None:
+            conf = np.zeros((1, len(self.classes)), dtype=np.float64)
 
         if self.ignore_frames > 0:
             self.ignore_frames -= 1
