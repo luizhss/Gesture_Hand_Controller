@@ -1,9 +1,6 @@
 import pickle
 import numpy as np
 
-CLASSES = ['left_click', 'mouse', 'right_click',
-           'scroll_down', 'scroll_up', 'zoom']
-
 
 class HandPoses:
     """
@@ -36,7 +33,7 @@ class HandPoses:
                 This method get name of predicted hand pose class, i.e. the class with the greater confidence
         """
         idx = np.argmax(result[0])
-        pose = CLASSES[idx]
+        pose = self.classifier.classes_[idx]
 
         if result[0, idx] < self.pose_threshold:
             pose = 'Unknown'

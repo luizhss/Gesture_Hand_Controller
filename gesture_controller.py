@@ -38,7 +38,7 @@ hand_detect = HandDetect(detect_threshold=args.detect_threshold)
 hand_pose = HandPoses(pose_threshold=args.pose_threshold,
                       name_classifier=args.path_classifier)
 hand_movements = HandMovements(screen_proportion=args.screen_proportion, len_moving_average=args.len_moving_average)
-delay = Delay(moving_average=args.moving_average, frames_in_action=args.frames_in, frames_out=args.frames_out)
+delay = Delay(hand_pose.classifier.classes_, moving_average=args.moving_average, frames_in_action=args.frames_in, frames_out=args.frames_out)
 
 cap = cv2.VideoCapture(0)
 # start_time = time.time()
@@ -50,6 +50,9 @@ with hand_detect.mp_hands.Hands(
         min_tracking_confidence=0.5) as hands:
     while(True):
         ret, image = cap.read()
+        if not ret:  # Image was not successfully read!
+            print('\rNo image!  Is a webcam available?', '', end='')
+            continue
 
         raw_frame = copy.deepcopy(image)
 
